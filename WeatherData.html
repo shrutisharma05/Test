@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body style="padding-top : 20px">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="well">
+            <span id="spanUsername" class="text-muted"></span><!--UserName Display-->
+            <input type="button" id="btnlogoff" class="btn btn-success pull-right" value="Log off" /><!--Logoff button-->
+            <br /> <br />
+
+            <label> Cick here to Get Weather Detail by city name </label>
+
+            <input type="button" id="btnGetWeather" class="btn btn-success" value="CityName" />
+            <br /> <br />
+
+            <label> Cick here to Get Weather Detail by zip Code</label>
+            <input type="button" id="btnGetWeatherZip" class="btn btn-success" value="ZipCode" />
+
+
+
+            <div class="well hidden" id="divWeatherData">
+                <table class="table" id="tblWeatherData">
+
+                    <tr id="cityDiv">
+                        <td>City</td>
+                        <td><input type="text" id="txtCityName" /></td>
+                    </tr>
+                    <tr id="zipDiv" class="hidden">
+                        <td>Zipcode</td>
+                        <td><input type="text" id="txtZipCode" /></td>
+                        <!--<td><input type="text" id="txtCountryCode" /></td>-->
+                    </tr>
+                </table>
+                <input type="button" class="success" id="btnGetWeatherByCityName" value="Go" />
+                <input type="button" class="hidden success" id="btnGetWeatherByZipCode" value="Go" />
+                <br /> <br />
+                <div id="weatherDataDiv">
+
+                </div>
+
+            </div>
+            <!--Session Expired Model Popup-->
+            <div class="modal fade" tabindex="-1" id="errorModel" data-keyboard="false" data-backdrop="static">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">
+                                &times;
+                            </button>
+                            <h4>Session Expired</h4>
+                            <div class="modal-body">
+                                <h2>Please close this message to login again!</h2>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" data-dismiss="modal" class="btn btn-success">
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div><!--End Session Expired Model Popup-->
+            <!--AlertError if data does not fall in success ajax request-->
+            <div id="divError" class="alert alert-danger collapse">
+                <a id="linkClose" class="close" href="#"> &times;</a>
+                <div id="divErrorText"></div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <script src="Content/js/Weather.js"></script>
+
+</body>
+</html>
